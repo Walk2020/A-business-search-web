@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Yelp Search page</title>
+    <link rel="stylesheet" href="static/mainpage_style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+    <div class="whole_page" id="whole_page">
+
+      <div class="header_and_form_container">
+        <div class = "header_container">
+          <p class = "BusinessSearch">Business Search</p>
+          <p class = "BusinessSearch_info">Fill out the form to get businesses near you!</p>
+        </div>
+  
+        <div class="form_container">
+          <form id = "myForm" onsubmit="return false">
+            <div class="keyword_container">
+              <label class="keyword_label" for="name">Keyword</label>
+              <input class="keyword_input" type="text" name="keyword" id="keyword" required>
+            </div>
+            
+  
+            <div class="distance_category_container">
+              <div class="distance_container">
+                <label class="distance_label" for="distance">Distance(miles)</label>
+                <input type="number"  min="0" max="25" class="distance_input"  name="distance" id="distance" placeholder="10" required>
+              </div>
+  
+              <div class="category_container">
+                <label class="category_label" >Category</label>
+                <select class="category_input" name = "category" id ="category" required>
+                  <option value="All"> Default </option>
+                  <option value="Arts %26 Entertainment"> Arts & Entertainment </option>
+                  <option value="Health %26 Medical"> Health & Medical </option>
+                  <option value="Hotels %26 Travel"> Hotels & Travel </option>
+                  <option value="Food"> Food </option>
+                  <option value="Professional Services"> Professional Services </option>
+                </select>
+              </div>
+            </div>
+  
+            <div class="location_container">
+              <label class="location_label" for="location">Location</label>
+              <input class="location_input" name = "location" id="location" required> 
+            </div>
+  
+            <hr class="line_above_autolocation">
+  
+            <div class="aotolocation_container">
+              <label class="aotolocation_label">Want us to auto-detect your location? Check here</label>
+              <input class="aotolocation_checkbox" type="checkbox" name = "autoLocation" id = "autoLocation" onclick="disableLocation()">
+            </div>
+  
+            <div class="button_container">
+              <button type="submit" class="submit_button" id="submit" onclick="setRequest()" >SUBMIT</button>
+              <button type="button" class="clear_button" id="clear" onclick="resetWeb()">CLEAR</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="result_no_matching" id="result_no_matching">
+        <p>No record has been found</p>
+      </div>
+
+      <div class="result_table_container" id="result_table_container">
+        <table id="result_table" style="display:none">
+          <tr id="result_table_header">
+            <th style="width:5%">No.</th>
+            <th style="width:10%">Image</th>
+            <th class="header" style="width:52%" onclick="sortColumn('name')">Business Name</th>
+            <th class="header" style="width:18%" onclick="sortColumn('rating')">Rating</th>
+            <th class="header" style="width:15%" onclick="sortColumn('distance')">Distance(miles)</th>
+          </tr>
+
+          <tbody id="table_data"></tbody>
+        </table>
+      </div>
+
+      <div id="info_card_container">
+
+        <h id="info_card_name"></h>
+
+        <hr id="line_in_info_card">
+
+        <div id="status_category_container">
+          <div id="status_container">
+            <h>Status</h>
+            <div class="info" id="status_info"></div>
+          </div>
+
+          <div id="category_container">
+            <h>Category</h>
+            <div class="info" id="category_info"></div>
+          </div>
+        </div>
+
+        <div id="address_phone_container">
+          <div id="address_container">
+            <h>Address</h>
+            <div class="info" id="address_info"></div>
+          </div>
+
+          <div id="phone_container">
+            <h>Phone Number</h>
+            <div class="info" id="phone_info"></div>
+          </div>
+        </div>
+
+        <div id="transaction_price_container">
+          <div id="transaction_container">
+            <h>Transactions Supported</h>
+            <div class="info" id="transaction_info"></div>
+          </div>
+
+          <div id="price_container">
+            <h>Price</h>
+            <div class="info" id="price_info"></div>
+          </div>
+        </div>
+        
+        <div id="more_info_container">
+          <h>More info</h>
+          <a id = "yelp_link" >Yelp</a>
+        </div>
+
+        <div id="pictures_container">
+          <div>
+            <img id="img0">
+            <h>photo 1</h>
+          </div>
+          <div>
+            <img id="img1">
+            <h>photo 2</h>
+          </div>
+          <div>
+            <img id="img2">
+            <h>photo 3</h>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <script src="static/mainpage.js"> </script>
+  </body>
+</div>
+</html>
