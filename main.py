@@ -2,8 +2,8 @@ from flask import Flask, request
 import requests
 import json
 
-#yelp API
-yelpApiKey = "ptqgJXe4bCz7an9SvSgqn92UgFsimWwPSh3MhMT_W4kDzo5dOM_dp_ugv_5v9Nr3pZwCrjs8jnc5CFKVczNS5h1PB6lUlG1dNTruIfxCaXMxhfkzMWaELsFu5igyY3Yx"
+#yelp API need key
+yelpApiKey = ""
 yelpEndPoint = "https://api.yelp.com/v3"
 businessSearchPath = "/businesses/search"
 businessDetailPath = "/businesses/{}"
