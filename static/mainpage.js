@@ -51,8 +51,9 @@ async function setRequest (){
   var formLocation = document.getElementById("location").value;
   //var url = "https://python-project-hw6673.wl.r.appspot.com";
   var url = window.location.href.split('#')[0];
-  var ipToken = "257935eef18f23";
-  var geoKey = "AIzaSyCKjFH0ANZp2b8Fraew3lyLA4mdUT2YYyA"
+  //needd api key
+  var ipToken = "";
+  var geoKey = ""
 
 
   if(document.getElementById("autoLocation").checked){ 
